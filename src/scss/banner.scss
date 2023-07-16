@@ -1,0 +1,21 @@
+.banner{
+    overflow-x: hidden;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.slider-content-picture {
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    padding: 30px;
+& img {
+    object-fit: cover;
+    object-position: center;
+    width: 50%;
+   
+    margin: auto;
+    align-items: center;
+    border-radius: 20px;
+}
+}
