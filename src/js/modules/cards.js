@@ -1,6 +1,12 @@
-const shoppingCardWrapper = document.getElementById('shopping-card_wrapper'); //TODO: use in another function
+export function printCards(productsArray) {
+    const shoppingCardWrapper = document.getElementById('shopping-card_wrapper');
+    for (let i = 0; i < 5; i++) {
+        const card = createCard(productsArray[i]);
+        shoppingCardWrapper.append(card);
+    }
+}
 
-export function createCard(product) {
+function createCard(product) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.setAttribute('id', product.id);
