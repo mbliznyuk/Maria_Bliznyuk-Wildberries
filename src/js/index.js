@@ -1,8 +1,15 @@
-import { logProducts } from "./modules/requests.js";
+import { loadProducts } from "./modules/requests.js";
+import { openShoppingfCartDialog } from "./modules/event-handlers.js"
+import { closeShoppingCartDialog } from "./modules/event-handlers.js";
 
-logProducts();
+const shopingCartSection = document.getElementById('shopping-cart_section');
+shopingCartSection.addEventListener('click', openShoppingfCartDialog);
 
-const swiper = new Swiper('.swiper-container', {
+const closeShoppingCartButton = document.getElementById('close-shopping-cart_button');
+closeShoppingCartButton.addEventListener('click', closeShoppingCartDialog);
+
+
+new Swiper('.swiper-container', {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -14,3 +21,4 @@ const swiper = new Swiper('.swiper-container', {
 
   loop: true,
 });
+loadProducts();

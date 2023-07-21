@@ -1,0 +1,62 @@
+.shopping-card {}
+
+.shoping-card_title {
+    margin-bottom: 30px;
+}
+
+.shopping-card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 220px;
+    padding: 0 10px;
+    position: relative;
+    // overflow: hidden;
+    transition: 0.7s;
+    margin-bottom: 20px;
+    &:hover {
+        overflow: visible;
+    }
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.7s;
+    margin-bottom: 20px;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+
+.discount-section {}
+
+.discount {}
+
+.cards-shopping-card {
+    cursor: pointer;
+}
+
+.price-section {}
+
+.price {}
+
+.prace-with-discount {}
+
+.product-name {}

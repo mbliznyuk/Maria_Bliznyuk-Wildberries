@@ -1,3 +1,5 @@
+import { addProductInShoppingCart } from "./event-handlers.js";
+
 export function printCards(productsArray) {
     const shoppingCardWrapper = document.getElementById('shopping-card_wrapper');
     for (let i = 0; i < 5; i++) {
@@ -11,7 +13,7 @@ function createCard(product) {
     card.classList.add('card');
     card.setAttribute('id', product.id);
     const imageParent = createCardImage(product.picture);
-    const discountSection = createCardDiscountSection(product.discount);
+    const discountSection = createCardDiscountSection(product.discount, product.id);
     const priceSection = createCardPriceSection(product.price, product.priceWithDiscount);
     const nameSection = createProductNameSection(product.name);
     card.append(imageParent, discountSection, priceSection, nameSection);
@@ -28,27 +30,32 @@ function createCardImage(pictureUrl) {
     return imageParent;
 }
 
-function createCardDiscountSection(discount) {
+function createCardDiscountSection(discount, id) {
     const discountSection = document.createElement('div');
     discountSection.classList.add('discount-section');
     const discountSpan = document.createElement('span');
     discountSpan.classList.add('discount');
     discountSpan.innerText = discount;
+    discountSection.append(discountSpan, createShoppingCart(id));
+    return discountSection;
+}
+
+function createShoppingCart(id) {
     const shoppingCart = document.createElement('span');
     shoppingCart.classList.add('cards-shopping-card');
     shoppingCart.innerHTML = '<i class="fa-solid fa-basket-shopping"></i>';
-    discountSection.append(discountSpan, shoppingCart);
-    return discountSection;
+    shoppingCart.addEventListener('click', () => addProductInShoppingCart(id));
+    return shoppingCart;
 }
 
 function createCardPriceSection(price, priceWithDiscount) {
     const priceSection = document.createElement('div');
     priceSection.classList.add('price-section');
     const priceSpan = document.createElement('span');
-    priceSpan.classList.add('prise');
+    priceSpan.classList.add('price');
     priceSpan.innerText = price;
     const priceWithDiscountSpan = document.createElement('span');
-    priceWithDiscountSpan.classList.add('prase-with-discount');
+    priceWithDiscountSpan.classList.add('prace-with-discount');
     priceWithDiscountSpan.innerText = priceWithDiscount;
     priceSection.append(priceSpan, priceWithDiscountSpan );
     return priceSection;
