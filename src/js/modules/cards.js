@@ -8,7 +8,7 @@ export function printCards(productsArray) {
     }
 }
 
-function createCard(product) {
+export function createCard(product) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.setAttribute('id', product.id);
@@ -35,7 +35,7 @@ function createCardDiscountSection(discount, id) {
     discountSection.classList.add('discount-section');
     const discountSpan = document.createElement('span');
     discountSpan.classList.add('discount');
-    discountSpan.innerText = discount;
+    discountSpan.innerText = '-' + discount + '%';
     discountSection.append(discountSpan, createShoppingCart(id));
     return discountSection;
 }
@@ -53,11 +53,11 @@ function createCardPriceSection(price, priceWithDiscount) {
     priceSection.classList.add('price-section');
     const priceSpan = document.createElement('span');
     priceSpan.classList.add('price');
-    priceSpan.innerText = price;
+    priceSpan.innerText = price + 'byn';
     const priceWithDiscountSpan = document.createElement('span');
     priceWithDiscountSpan.classList.add('prace-with-discount');
-    priceWithDiscountSpan.innerText = priceWithDiscount;
-    priceSection.append(priceSpan, priceWithDiscountSpan );
+    priceWithDiscountSpan.innerText = priceWithDiscount + 'byn';
+    priceSection.append(priceWithDiscountSpan, priceSpan);
     return priceSection;
 }
 

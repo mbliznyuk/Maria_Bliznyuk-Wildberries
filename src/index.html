@@ -10,27 +10,6 @@
 </head>
 
 <body>
-    <div class="shopping-cart_modal-window" id="shopping-cart_modal-window">
-        <button class="close-shopping-cart_button" id="close-shopping-cart_button">X</button>
-        <div class="shoping-cart_title">
-            <span>Корзина</span>
-            <button>Удалить все</button>
-
-            <table border="1">
-                <tbody id="cart-table-body">
-                    <tr>
-                        <th>Заголовок 1</th>
-                        <th>Заголовок 2</th>
-                    </tr>
-                    <tr>
-                        <td>Данные 1</d>
-                        <td>Данные 2</td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-    </div>
     <header class="header">
         <div class="container">
             <div class="header-wrape">
@@ -39,12 +18,36 @@
                 </a>
                 <div class="search-input">
                     <input type="text" placeholder="Искать на Wildberries..." id="search-box" class="search-box">
+                    <div class="search-results-dialog" id="search-results-dialog"></div>
                 </div>
                 <div class="shopping-cart_section" id="shopping-cart_section">
                     <div class="shopping-cart_img">
                         <i class="fa-solid fa-cart-shopping fa-cart-shopping_img"></i>
                     </div>
                     <div class="shopping-cart_text">Корзина</div>
+                </div>
+            </div>
+            <div class="shopping-cart_modal-window" id="shopping-cart_modal-window">
+                <button class="close-shopping-cart_button" id="close-shopping-cart_button">X</button>
+                <div class="shoping-cart_title">
+                    <span>Корзина</span>
+                    <button id="delete-products-from-shopping-cart">Очистить корзину</button>
+                </div>
+                <table border="1">
+                    <tbody id="cart-table-body">
+                        <tr>
+                            <th>Заголовок 1</th>
+                            <th>Заголовок 2</th>
+                        </tr>
+                        <tr>
+                            <td>Данные 1</d>
+                            <td>Данные 2</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="total-price">
+                    <span>Итого:</span><span id="total-price-value">0</span>
                 </div>
             </div>
         </div>
