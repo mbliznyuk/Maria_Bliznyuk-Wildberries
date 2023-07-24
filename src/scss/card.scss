@@ -7,15 +7,15 @@
 .shopping-card_wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
-.card {
-    width: 220px;
+.mainCard {
+    width: 250px;
     padding: 0 10px;
     position: relative;
     transition: 0.7s;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     // z-index: 99;
     &:hover {
@@ -23,9 +23,9 @@
     }
 }
 
-.card-image {
+.main-card-image {
     width: 100%;
-    height: 250px;
+   max-height: 300px;
     overflow: hidden;
     cursor: pointer;
     transition: 0.7s;
@@ -34,7 +34,7 @@
     border-radius: 10px;
 
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
     & img {
@@ -60,7 +60,7 @@
     font-size: 18px;
 }
 
-.cards-shopping-card {
+.cards-shopping-cart {
     cursor: pointer;
     font-size: 24px;
     transition: 0.5s;

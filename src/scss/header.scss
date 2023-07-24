@@ -26,57 +26,6 @@
     }
 }
 
-.search-input {
-    width: 670px;
-    height: 57px;
-    position: relative;
-    z-index: 99999;
-
-    & input {
-        width: 100%;
-        height: 100%;
-        border-radius: 50px;
-        border: 1px solid transparent;
-        background-color: rgba(255, 255, 255, 0.4);
-        padding: 10px 15px;
-        color: black;
-        font-size: 20px;
-        font-family: 600;
-        cursor: pointer;
-        // transition: 0.8s;
-        outline: none;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.6);
-        }
-
-        &:focus {
-            background-color: rgba(255, 255, 255, 1);
-        }
-
-        &::placeholder {
-            color: rgba(255, 255, 255, 0.69);
-            font-size: 18px;
-            font-weight: 600;
-        }
-    }
-}
-
-.search-results-dialog {
-    padding: 15px;
-    position: absolute;
-    width: 100%;
-    height: 500px;
-    top: 57px;
-    background-color: #fff;
-    z-index: 10;
-    border-radius: 0 0 25px 25px;
-    transition: .4s;
-    display: none;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-}
-
 .shopping-cart_section {
     display: flex;
     flex-direction: column;

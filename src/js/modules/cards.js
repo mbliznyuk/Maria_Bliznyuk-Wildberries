@@ -2,17 +2,17 @@ import { addProductInShoppingCart } from "./event-handlers.js";
 
 export function printCards(productsArray) {
     const shoppingCardWrapper = document.getElementById('shopping-card_wrapper');
-    for (let i = 0; i < 5; i++) {
-        const card = createCard(productsArray[i]);
+    for (let i = 0; i < 10; i++) {
+        const card = createCard(productsArray[i], 'mainCard', 'main-card-image');
         shoppingCardWrapper.append(card);
     }
 }
 
-export function createCard(product) {
+export function createCard(product, className, imgClassName) {
     const card = document.createElement('div');
-    card.classList.add('card');
+    card.classList.add(className);
     card.setAttribute('id', product.id);
-    const imageParent = createCardImage(product.picture);
+    const imageParent = createCardImage(product.picture, imgClassName);
     const discountSection = createCardDiscountSection(product.discount, product.id);
     const priceSection = createCardPriceSection(product.price, product.priceWithDiscount);
     const nameSection = createProductNameSection(product.name);
@@ -20,9 +20,9 @@ export function createCard(product) {
     return card;
 }
 
-function createCardImage(pictureUrl) {
+function createCardImage(pictureUrl, className) {
     const imageParent = document.createElement('div');
-    imageParent.classList.add('card-image');
+    imageParent.classList.add(className);
     const image = document.createElement('img');
     image.setAttribute('src', pictureUrl);
     image.setAttribute('alt', 'product');
@@ -42,7 +42,7 @@ function createCardDiscountSection(discount, id) {
 
 function createShoppingCart(id) {
     const shoppingCart = document.createElement('span');
-    shoppingCart.classList.add('cards-shopping-card');
+    shoppingCart.classList.add('cards-shopping-cart');
     shoppingCart.innerHTML = '<i class="fa-solid fa-basket-shopping"></i>';
     shoppingCart.addEventListener('click', () => addProductInShoppingCart(id));
     return shoppingCart;

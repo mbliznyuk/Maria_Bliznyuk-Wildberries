@@ -11,6 +11,7 @@
 @import "../scss/banner.scss";
 @import "../scss/card.scss";
 @import "../scss/shopping-cart.scss";
+@import "./search-dialog.scss";
 
 html {
     color: black;
@@ -18,7 +19,7 @@ html {
 }
 
 .container {
-    max-width: 1170px;
+    max-width: 1500px;
     padding: 0 15px;
     margin: auto;
     position: relative;

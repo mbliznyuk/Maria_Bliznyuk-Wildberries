@@ -18,11 +18,11 @@ function printCalculatedTotalPrice() {
     let totalPriceValue = document.getElementById('total-price-value');
     const producstInShoppingCart = findProductsInShoppingCart();
     const pricesOfProducts = producstInShoppingCart.map(element => element.priceWithDiscount);
-    totalPriceValue.innerText = pricesOfProducts.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    totalPriceValue.innerText = pricesOfProducts.reduce((accumulator, currentValue) => accumulator + currentValue, 0) + ' byn';
 }
 
 function printCartTableRows() {
-    const tableBody = document.getElementById('cart-table-body');
+    const tableBody = document.getElementById('table-of-products');
     tableBody.innerHTML = '';
     findProductsInShoppingCart().forEach(it =>
         tableBody.append(createTableRow(it.name, it.priceWithDiscount))
@@ -40,7 +40,7 @@ function createTableRow(name, priceWithDiscount) {
     const tableRow = document.createElement('tr');
     tableRow.classList.add('cart-table-row');
     const tableDataCellForName = createTableDataCell('cart-table-cell-for-name', name);
-    const tableDataCellForPrice = createTableDataCell('cart-table-cell-for-price', priceWithDiscount);
+    const tableDataCellForPrice = createTableDataCell('cart-table-cell-for-price', priceWithDiscount + ' р.');
     tableRow.append(tableDataCellForName, tableDataCellForPrice);
     return tableRow;
 }
@@ -65,7 +65,7 @@ export function addProductInShoppingCart(id) {
 }
 
 export function deleteProductsFromShoppingCart() {
-    const tableBody = document.getElementById('cart-table-body');
+    const tableBody = document.getElementById('table-of-products');
     tableBody.innerHTML = '';
     setProductsInCart([]);
     printCartTableWithTotalPrice();
@@ -92,5 +92,5 @@ function togleSearchResultDialog(searchResultDialog, productForSearch) {
 }
 
 function printFoundCards(searchDialog, foundCardArray) {
-    foundCardArray.forEach(element => searchDialog.append(createCard(element)));
+    foundCardArray.forEach(element => searchDialog.append(createCard(element, 'found-card', 'found-card-image')));
 }
