@@ -3,7 +3,7 @@ import { getProductsInCart } from "./products-in-cart.js";
 import { printFoundCards } from "./cards.js";
 import { CURRENCY_BYN, CURRENCY_BYN_CODE } from "./const.js";
 
-export function openShoppingfCartDialog() {
+export function openShoppingCartDialog() {
     const shoppingCartModalWindow = document.getElementById('shopping-cart_modal-window');
     shoppingCartModalWindow.style.top = '100%';
     printCartTableWithTotalPrice();
