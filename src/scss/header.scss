@@ -16,8 +16,16 @@
 }
 
 .logo {
-    width: 260px;
+    width: 280px;
     overflow: visible;
+    padding: 10px;
+    @media (max-width: 1200px) {
+       width: 200px;
+    }
+
+    @media (max-width: 550px) {
+   display: none;
+     }
 
     & img {
         width: 100%;
@@ -36,13 +44,16 @@
     transition: 0.8s;
 
     &:hover .fa-cart-shopping_img {
-        color: rgba(255, 255, 255, 0.775);
+        color: rgba(255, 199, 246, 0.464);
     }
 
     .fa-cart-shopping_img {
         font-size: 34px;
         margin-bottom: 10px;
         transition: 0.8s;
+        @media (max-width: 800px) {
+          font-size: 28px;
+         }
     }
 }
 
@@ -55,4 +66,7 @@
     font-weight: 500;
     font-size: 18px;
     transition: 0.8s;
+    @media (max-width: 800px) {
+        font-size: 16px;
+     }
 }

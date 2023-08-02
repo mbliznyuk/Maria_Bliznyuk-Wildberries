@@ -15,7 +15,19 @@
 
 html {
     color: black;
-    background-color:  rgba(228, 219, 238, 0.926);
+    background-color: rgba(228, 219, 238, 0.926);
+
+    @media (max-width: 992px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 576px) {
+        font-size: 10px;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 12px;
+    }
 }
 
 .container {
@@ -23,4 +35,29 @@ html {
     padding: 0 15px;
     margin: auto;
     position: relative;
+
+    @media (max-width: 1200px) {
+        max-width: 970px;
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        max-width: 970px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        width: 100%;
+    }
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+
+
+    @media (max-width: 566px) {
+        width: 100%;
+    }
+
+    @media (max-width: 320px) {
+        width: 100%;
+    }
 }

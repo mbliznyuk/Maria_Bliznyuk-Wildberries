@@ -3,29 +3,14 @@ import { openShoppingfCartDialog } from "./modules/event-handlers.js"
 import { closeShoppingCartDialog } from "./modules/event-handlers.js";
 import { deleteProductsFromShoppingCart } from "./modules/event-handlers.js";
 import { searchProducts } from "./modules/event-handlers.js";
+import { debounce } from "./modules/event-handlers.js";
+import { createSlider } from "./modules/slider.js";
+import { DELAY_TIME_MS } from "./modules/const.js"
 
-const shopingCartSection = document.getElementById('shopping-cart_section');
-shopingCartSection.addEventListener('click', openShoppingfCartDialog);
+document.getElementById('shopping-cart_section').addEventListener('click', openShoppingfCartDialog);
+document.getElementById('close-shopping-cart_button').addEventListener('click', closeShoppingCartDialog);
+document.getElementById('delete-products-from-shopping-cart').addEventListener('click', deleteProductsFromShoppingCart);
+document.getElementById('search-box').addEventListener('keyup', debounce(searchProducts, DELAY_TIME_MS));
 
-const closeShoppingCartButton = document.getElementById('close-shopping-cart_button');
-closeShoppingCartButton.addEventListener('click', closeShoppingCartDialog);
-
-const deleteProductsFromShoppingCartButton = document.getElementById('delete-products-from-shopping-cart');
-deleteProductsFromShoppingCartButton.addEventListener('click', deleteProductsFromShoppingCart);
-
-const searchResaultsDialog = document.getElementById('search-box');
-searchResaultsDialog.addEventListener('keyup', searchProducts);
-
-new Swiper('.swiper-container', {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
-  loop: true,
-});
+createSlider();
 loadProducts();
